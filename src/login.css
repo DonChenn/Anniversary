@@ -114,3 +114,18 @@ label {
     height: 100%;
     z-index: -1;
 }
+
+.fade-out {
+    animation: fadeOut 2s forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        background-color: lightblue;
+    }
+    to {
+        opacity: 0;
+        background-color: midnightblue;
+    }
+}

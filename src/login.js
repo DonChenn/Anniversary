@@ -43,10 +43,17 @@ function initializeLoginForm() {
         const password = passwordInput.value;
 
         if (username === "glub glub" && password === "meow meow") {
-            messageElement.textContent = `Welcome, ${username}! Logging you in...`;
+            messageElement.textContent = `Entering the glub glub world...`;
+
             setTimeout(() => {
-                window.location.href = 'welcome.html';
+                document.body.classList.add('fade-out');
+
+                setTimeout(() => {
+                    window.location.href = 'welcome.html';
+                }, 2000);
+
             }, 2000);
+
         } else {
             attemptCount++;
             handleFailedLogin(attemptCount, messageElement);
