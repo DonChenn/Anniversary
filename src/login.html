@@ -15,11 +15,13 @@
 
 <div class="App">
   <header class="App-header">
+    <h2 class="to">Hello Thuyen,</h2>
     <h1>Log in to Anniversary Wrapped!</h1>
+    <h2 class="from">- Donovan</h2>
     <img src="assets/gifs/cake.gif" alt="cake gif"/>
   </header>
 
-  <form id="login-form">
+  <form id="login-form">  <div class="login-grid">
     <div class="username-group">
       <label for="username">Username:</label>
       <div>
@@ -33,18 +35,25 @@
         <input type="text" id="password" />
       </div>
     </div>
+  </div>
+
     <button type="submit">Login</button>
   </form>
-
   <p id="message"></p>
 </div>
 
 <div>
   <footer class="login-footer">
-    <a href="https://linkedin.com/in/donovanachen" target="_blank"> linkedin.com/in/donovanachen </a>
+    <a href="https://github.com/DonChenn/Anniversary" target="_blank"> github.com/DonChenn/Anniversary </a>
+
+    <div class="linkedin">
+      <a href="https://linkedin.com/in/donovanachen" target="_blank"> linkedin.com/in/donovanachen </a>
+    </div>
   </footer>
 </div>
 
+
+<script src="https://cdn.jsdelivr.net/npm/confetti-js@0.0.18/dist/index.min.js"></script>
 <script src="login.js"></script>
 </body>
 </html>
