@@ -3,6 +3,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const characterImage = character.querySelector('img');
     const speed = 5;
 
+    const path = window.location.pathname;
+    const page_html = path.split("/").pop();
+    const page = page_html.split('.')[0];
+
+    let path_dict = {
+        welcome: ["login.html", "next.html"],
+        next: ["welcome.html", "next2.html"]
+    }
+
+    const pages = path_dict[page];
+    const prev = pages[0];
+    const next = pages[1];
+
     let x = window.innerWidth / 2;
     let y = window.innerHeight / 2;
     let isFlipped = false;
@@ -61,6 +74,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         updatePosition();
+
+        if (x < 0) {
+            window.location.href = prev;
+        } else if (x > window.innerWidth) {
+            window.location.href = next;
+        }
 
         requestAnimationFrame(moveLoop);
     }
