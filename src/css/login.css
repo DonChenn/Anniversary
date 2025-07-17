@@ -1,6 +1,6 @@
 @Font-Face {
     font-family: 'Omori';
-    src: url('assets/fonts/OMORI_GAME2.ttf') format('truetype');
+    src: url('../assets/fonts/OMORI_GAME2.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -8,14 +8,14 @@
 
 @Font-Face {
     font-family: 'Crayon';
-    src: url('assets/fonts/OMORI_GAME2.ttf') format('truetype');
+    src: url('../assets/fonts/OMORI_GAME2.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
 }
 
 body {
-    cursor: url('assets/cursors/happycursor.png'), default;
+    cursor: url('../assets/cursors/happycursor.png'), default;
     background-color: lightblue;
     font-family: Omori, sans-serif;
     font-size: 30px;
@@ -57,7 +57,7 @@ body {
 }
 
 input[type=text] {
-    cursor: url('assets/cursors/chippi.png'), text;
+    cursor: url('../assets/cursors/chippi.png'), text;
 
     width: 200px;
     height: 30px;
@@ -87,7 +87,7 @@ button[type=submit] {
     border-radius: 8px;
     background-color: beige;
 
-    cursor: url('assets/cursors/pop.png'), text;
+    cursor: url('../assets/cursors/pop.png'), text;
 }
 
 button[type=submit]:hover {
@@ -95,7 +95,7 @@ button[type=submit]:hover {
 }
 
 label {
-    cursor: url('assets/cursors/happycursor.png'), default;
+    cursor: url('../assets/cursors/happycursor.png'), default;
 }
 
 .login-footer {

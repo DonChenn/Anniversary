@@ -1,6 +1,6 @@
 @Font-Face {
     font-family: 'Omori';
-    src: url('assets/fonts/OMORI_GAME2.ttf') format('truetype');
+    src: url('../assets/fonts/OMORI_GAME2.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -8,10 +8,10 @@
 
 body {
     margin: 0;
-    background: url('assets/art/bottom.png');
+    background: url('../assets/art/bottom.png');
     background-size: cover;
     overflow: hidden;
-    cursor: url('assets/cursors/happycursor.png'), default;
+    cursor: url('../assets/cursors/happycursor.png'), default;
     font-family: Omori, sans-serif;
 }
 
