@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const page = page_html.split('.')[0];
 
     let path_dict = {
-        welcome: ["login.html", "next.html"],
+        welcome: [null, "next.html"],
         next: ["welcome.html", "next2.html"]
     }
 
@@ -75,9 +75,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         updatePosition();
 
-        if (x < 0) {
+        if (x < 0 && prev) {
             window.location.href = prev;
-        } else if (x > window.innerWidth) {
+        } else if (x > window.innerWidth && next) {
             window.location.href = next;
         }
 
