@@ -33,6 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
         x = window.innerWidth;
         is_flipped = true;
         character_img.classList.add('flipped');
+    } else if (from === "login") {
+        x = window.innerWidth / 3;
+        y = window.innerHeight / 1.4;
     }
 
     const keys_pressed = {
