@@ -1,7 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     const character = document.getElementById('character');
-    const characterImage = character.querySelector('img');
-    const speed = 5;
+    const character_img = character.querySelector('img');
+
+    const norm_speed = 5;
+    const sprint_spreed = 10;
+    let speed = norm_speed;
 
     const path = window.location.pathname;
     const page_html = path.split("/").pop();
@@ -22,58 +25,70 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let x = window.innerWidth / 2;
     let y = window.innerHeight / 2;
-    let isFlipped = false;
 
     if (from === prev) {
         x = 0;
     } else if (from === next) {
         x = window.innerWidth;
-        isFlipped = true;
-        characterImage.classList.add('flipped');
+        is_flipped = true;
+        character_img.classList.add('flipped');
     }
 
-    const keysPressed = {
+    let is_flipped = false;
+
+    const keys_pressed = {
         w: false,
         a: false,
         s: false,
-        d: false
+        d: false,
+        Shift: false
     };
 
     const updatePosition = () => {
-        const charRect = character.getBoundingClientRect();
-        character.style.left = `${x - charRect.width / 2}px`;
-        character.style.top = `${y - charRect.height / 2}px`;
+        const char_rect = character.getBoundingClientRect();
+        character.style.left = `${x - char_rect.width / 2}px`;
+        character.style.top = `${y - char_rect.height / 2}px`;
     };
 
     document.addEventListener('keydown', (event) => {
-        const key = event.key.toLowerCase();
-        if (key in keysPressed) {
-            keysPressed[key] = true;
+        const key = event.key;
+        if (key === 'Shift') {
+            keys_pressed.Shift = true;
+        } else if (key.toLowerCase() in keys_pressed) {
+            keys_pressed[key.toLowerCase()] = true;
         }
     });
 
     document.addEventListener('keyup', (event) => {
-        const key = event.key.toLowerCase();
-        if (key in keysPressed) {
-            keysPressed[key] = false;
+        const key = event.key;
+        if (key === 'Shift') {
+            keys_pressed.Shift = false;
+        } else if (key.toLowerCase() in keys_pressed) {
+            keys_pressed[key.toLowerCase()] = false;
         }
     });
 
     function moveLoop() {
+        if (keys_pressed.Shift) {
+            speed = sprint_spreed;
+        } else {
+            speed = norm_speed;
+        }
+
         let dx = 0;
         let dy = 0;
 
-        if (keysPressed.w) dy -= 1;
-        if (keysPressed.s) dy += 1;
-        if (keysPressed.a) dx -= 1;
-        if (keysPressed.d) dx += 1;
+        if (keys_pressed.w) dy -= 1;
+        if (keys_pressed.s) dy += 1;
+        if (keys_pressed.a) dx -= 1;
+        if (keys_pressed.d) dx += 1;
 
-        if (dx < 0 && !isFlipped) {
-            isFlipped = true;
-            characterImage.classList.add('flipped');
-        } else if (dx > 0 && isFlipped) {
-            isFlipped = false;
-            characterImage.classList.remove('flipped');
+        if (dx < 0 && !is_flipped) {
+            is_flipped = true;
+            character_img.classList.add('flipped');
+        } else if (dx > 0 && is_flipped) {
+            is_flipped = false;
+            character_img.classList.remove('flipped');
         }
 
         if (dx !== 0 && dy !== 0) {
