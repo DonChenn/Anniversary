@@ -49,7 +49,7 @@ function initializeLoginForm() {
                 document.body.classList.add('fade-out');
 
                 setTimeout(() => {
-                    window.location.href = 'welcome.html?from=login';
+                    window.location.href = 'prologue.html';
                 }, 2000);
 
             }, 2000);
