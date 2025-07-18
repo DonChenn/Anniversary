@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let x = window.innerWidth / 2;
     let y = window.innerHeight / 2;
+    let is_flipped = false;
 
     if (from === prev) {
         x = 0;
@@ -33,8 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
         is_flipped = true;
         character_img.classList.add('flipped');
     }
-
-    let is_flipped = false;
 
     const keys_pressed = {
         w: false,
