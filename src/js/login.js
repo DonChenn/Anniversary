@@ -49,7 +49,7 @@ function initializeLoginForm() {
                 document.body.classList.add('fade-out');
 
                 setTimeout(() => {
-                    window.location.href = 'welcome.html';
+                    window.location.href = 'welcome.html?from=login';
                 }, 2000);
 
             }, 2000);
@@ -61,7 +61,33 @@ function initializeLoginForm() {
     });
 }
 
+function initializeStartScreen() {
+    const startScreen = document.getElementById('start-screen');
+    const app = document.querySelector('.App');
+    const footer = document.querySelector('.login-footer');
+    const audio = document.getElementById('background-music');
+
+    startScreen.addEventListener('click', () => {
+        startScreen.style.pointerEvents = 'none';
+
+        startScreen.classList.add('fade-out-start');
+
+        setTimeout(() => {
+            startScreen.classList.add('hidden');
+        }, 1000);
+
+        app.classList.remove('hidden');
+        app.classList.add('fade-in');
+
+        footer.classList.remove('hidden');
+        footer.classList.add('fade-in');
+
+        audio.play();
+    });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     setupConfetti();
     initializeLoginForm();
+    initializeStartScreen();
 });

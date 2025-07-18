@@ -7,9 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const page_html = path.split("/").pop();
     const page = page_html.split('.')[0];
 
+    const query_string = window.location.search;
+    const url_params = new URLSearchParams(query_string);
+    const from = url_params.get('from');
+
     let path_dict = {
-        welcome: [null, "next.html"],
-        next: ["welcome.html", "next2.html"]
+        welcome: [null, "next"],
+        next: ["welcome", "next2"]
     }
 
     const pages = path_dict[page];
@@ -19,6 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
     let x = window.innerWidth / 2;
     let y = window.innerHeight / 2;
     let isFlipped = false;
+
+    if (from === prev) {
+        x = 0;
+    } else if (from === next) {
+        x = window.innerWidth;
+        isFlipped = true;
+        characterImage.classList.add('flipped');
+    }
 
     const keysPressed = {
         w: false,
@@ -76,9 +88,11 @@ document.addEventListener('DOMContentLoaded', () => {
         updatePosition();
 
         if (x < 0 && prev) {
-            window.location.href = prev;
+            window.location.href = `${prev}.html?from=${page}`;
+            System.exit(0);
         } else if (x > window.innerWidth && next) {
-            window.location.href = next;
+            window.location.href = `${next}.html?from=${page}`;
+            System.exit(0);
         }
 
         requestAnimationFrame(moveLoop);
