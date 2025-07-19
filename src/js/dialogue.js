@@ -5,13 +5,14 @@ class dialogue_manager {
         this.dialogue_sound = dialogue_sound;
         this.current_dialogue_index = 0;
         this.is_typing = false;
+        this.is_finished = false;
         this.on_complete = null;
     }
 
     type_writer(text, on_complete) {
         this.is_typing = true;
         if (this.dialogue_sound) {
-            // this.dialogue_sound.currentTime = 0;
+            this.dialogue_sound.currentTime = 0;
             this.dialogue_sound.play();
         }
 
@@ -37,6 +38,8 @@ class dialogue_manager {
     }
 
     show_next_dialogue() {
+        if (this.is_finished) return;
+
         if (this.is_typing) {
             this.is_typing = false;
             this.dialogue_text_element.innerHTML = this.dialogues[this.current_dialogue_index -1];
@@ -49,8 +52,11 @@ class dialogue_manager {
         if (this.current_dialogue_index < this.dialogues.length) {
             this.type_writer(this.dialogues[this.current_dialogue_index], () => {
                 this.current_dialogue_index++;
-                if (this.current_dialogue_index >= this.dialogues.length && this.on_complete) {
-                    this.on_complete();
+                if (this.current_dialogue_index >= this.dialogues.length) {
+                    this.is_finished = true;
+                    if (this.on_complete) {
+                        this.on_complete();
+                    }
                 }
             });
         }
@@ -59,6 +65,7 @@ class dialogue_manager {
     start(on_complete) {
         this.on_complete = on_complete;
         this.current_dialogue_index = 0;
+        this.is_finished = false; // Reset the flag on start
         this.show_next_dialogue();
     }
 }
