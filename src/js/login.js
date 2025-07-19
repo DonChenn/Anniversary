@@ -1,5 +1,5 @@
-function setupConfetti() {
-    const confettiSettings = {
+function setup_confetti() {
+    const confetti_settings = {
         target: 'confetti-canvas',
         max: 80,
         size: 1,
@@ -11,39 +11,39 @@ function setupConfetti() {
         width: window.innerWidth,
         height: window.innerHeight
     };
-    const confetti = new ConfettiGenerator(confettiSettings);
+    const confetti = new ConfettiGenerator(confetti_settings);
     confetti.render();
 }
 
-function handleFailedLogin(count, messageElement) {
+function handle_failed_login(count, message_element) {
     if (count === 1) {
-        messageElement.textContent = 'Keep Trying!';
+        message_element.textContent = 'Keep Trying!';
     } else if (count === 2) {
-        messageElement.textContent = 'HINT: what are our nicknames?';
+        message_element.textContent = 'HINT: what are our nicknames?';
     } else if (count === 3) {
-        messageElement.textContent = 'HINT: Yours goes first.';
+        message_element.textContent = 'HINT: Yours goes first.';
     } else if (count === 4) {
-        messageElement.textContent = 'HINT: ⟩<^,«⋗ AND /ᐠ > ˕ <マ';
+        message_element.textContent = 'HINT: ⟩<^,«⋗ AND /ᐠ > ˕ <マ';
     } else {
-        messageElement.textContent = 'bruh';
+        message_element.textContent = 'bruh';
     }
 }
 
-function initializeLoginForm() {
-    const loginForm = document.getElementById('login-form');
-    const usernameInput = document.getElementById('username');
-    const passwordInput = document.getElementById('password');
-    const messageElement = document.getElementById('message');
-    let attemptCount = 0;
+function initialize_login_form() {
+    const login_form = document.getElementById('login-form');
+    const username_input = document.getElementById('username');
+    const password_input = document.getElementById('password');
+    const message_element = document.getElementById('message');
+    let attempt_count = 0;
 
-    loginForm.addEventListener('submit', (event) => {
+    login_form.addEventListener('submit', (event) => {
         event.preventDefault();
 
-        const username = usernameInput.value;
-        const password = passwordInput.value;
+        const username = username_input.value;
+        const password = password_input.value;
 
         if (username === "glub glub" && password === "meow meow") {
-            messageElement.textContent = `Entering the glub glub world...`;
+            message_element.textContent = `Entering the glub glub world...`;
 
             setTimeout(() => {
                 document.body.classList.add('fade-out');
@@ -55,25 +55,25 @@ function initializeLoginForm() {
             }, 2000);
 
         } else {
-            attemptCount++;
-            handleFailedLogin(attemptCount, messageElement);
+            attempt_count++;
+            handle_failed_login(attempt_count, message_element);
         }
     });
 }
 
-function initializeStartScreen() {
-    const startScreen = document.getElementById('start-screen');
+function initialize_start_screen() {
+    const start_screen = document.getElementById('start-screen');
     const app = document.querySelector('.App');
     const footer = document.querySelector('.login-footer');
     const audio = document.getElementById('background-music');
 
-    startScreen.addEventListener('click', () => {
-        startScreen.style.pointerEvents = 'none';
+    start_screen.addEventListener('click', () => {
+        start_screen.style.pointerEvents = 'none';
 
-        startScreen.classList.add('fade-out-start');
+        start_screen.classList.add('fade-out-start');
 
         setTimeout(() => {
-            startScreen.classList.add('hidden');
+            start_screen.classList.add('hidden');
         }, 1000);
 
         app.classList.remove('hidden');
@@ -87,7 +87,7 @@ function initializeStartScreen() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    setupConfetti();
-    initializeLoginForm();
-    initializeStartScreen();
+    setup_confetti();
+    initialize_login_form();
+    initialize_start_screen();
 });

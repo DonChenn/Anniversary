@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome!</title>
+  <link rel="stylesheet" href="css/boat.css">
+  <link rel="icon" href="assets/sprites/glubglub.gif" type="image/png">
+</head>
+<body>
+
+<div id="character">
+  <img src="assets/sprites/glubglub.gif" alt="character">
+</div>
+
+<h6>
+  Use "␣" to interact
+</h6>
+
+<div id="dialogue-box">
+  <p id="dialogue-text"></p>
+</div>
+
+<div id="note-overlay">
+  <div id="note-content">
+    <img id="note-image" src="assets/sprites/letter.png" alt="Message in a bottle">
+    <p id="note-text">
+      Dear Glub Glub, <br>
+      Happy 7th Anniversary! I hope ur doing okay after <br>
+      getting sucked into that whirlpool. We always find <br>
+      a way to each other. Whether I visit u at <br>
+      UCLA/San Mateo or u hitching a ride to Irvine, <br>
+      I'm always the happiest when ur with me, <br>
+      especially when we eat ur kind (sushi). <br>
+      Even if were physically separated, I'll <br>
+      never leave ur side! I love calling u, watching tv <br>
+      shows with u, and playing video games. <br>
+      I left some reminders of what we've <br>
+      done this past year together <br>
+      just in case u alrdy forgot abt me haha.<br>
+      I'll see you soon.<br>
+      Love,<br>
+      Meow Meow
+    </p>
+  </div>
+</div>
+
+<audio id="dialogue-sound" src="assets/sound/dialogue.mp3" loop></audio>
+<audio id="background-music" src="assets/sound/water_background.mp3" loop autoplay></audio>
+
+<script src="js/movement.js"></script>
+<script src="js/dialogue.js"></script>
+<script src="js/boat.js"></script>
+<script src="js/background_music.js"></script>
+
+</body>
+</html>

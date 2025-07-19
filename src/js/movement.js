@@ -1,9 +1,12 @@
+let x = window.innerWidth / 2;
+let y = window.innerHeight / 2;
+
 document.addEventListener('DOMContentLoaded', () => {
     const character = document.getElementById('character');
     const character_img = character.querySelector('img');
 
     const norm_speed = 5;
-    const sprint_spreed = 10;
+    const sprint_speed = 10;
     let speed = norm_speed;
 
     const path = window.location.pathname;
@@ -15,16 +18,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const from = url_params.get('from');
 
     let path_dict = {
-        welcome: [null, "next"],
-        next: ["welcome", "next2"]
+        welcome: [null, "boat"],
+        boat: ["welcome", "next2"]
     }
 
     const pages = path_dict[page];
     const prev = pages[0];
     const next = pages[1];
 
-    let x = window.innerWidth / 2;
-    let y = window.innerHeight / 2;
     let is_flipped = false;
 
     if (from === prev) {
@@ -46,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         Shift: false
     };
 
-    const updatePosition = () => {
+    const update_position = () => {
         const char_rect = character.getBoundingClientRect();
         character.style.left = `${x - char_rect.width / 2}px`;
         character.style.top = `${y - char_rect.height / 2}px`;
@@ -70,9 +71,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    function moveLoop() {
+    function move_loop() {
         if (keys_pressed.Shift) {
-            speed = sprint_spreed;
+            speed = sprint_speed;
         } else {
             speed = norm_speed;
         }
@@ -94,15 +95,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (dx !== 0 && dy !== 0) {
-            const diagonalSpeed = speed / Math.sqrt(2);
-            x += dx * diagonalSpeed;
-            y += dy * diagonalSpeed;
+            const diagonal_speed = speed / Math.sqrt(2);
+            x += dx * diagonal_speed;
+            y += dy * diagonal_speed;
         } else {
             x += dx * speed;
             y += dy * speed;
         }
 
-        updatePosition();
+        update_position();
 
         if (x < 0 && prev) {
             window.location.href = `${prev}.html?from=${page}`;
@@ -112,9 +113,9 @@ document.addEventListener('DOMContentLoaded', () => {
             System.exit(0);
         }
 
-        requestAnimationFrame(moveLoop);
+        requestAnimationFrame(move_loop);
     }
 
-    updatePosition();
-    moveLoop();
+    update_position();
+    move_loop();
 });

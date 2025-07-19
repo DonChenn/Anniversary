@@ -39,6 +39,8 @@ body, html {
     border-radius: 15px;
     padding: 20px;
     box-sizing: border-box;
+
+    cursor: url('../assets/cursors/happycursor.png'), default;
 }
 
 #dialogue-text {

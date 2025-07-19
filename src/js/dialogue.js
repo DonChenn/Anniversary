@@ -1,47 +1,64 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const dialogueTextElement = document.getElementById('dialogue-text');
-    const dialogues = [
-        "click happy cat inside the box to advance dialogue",
-        "Glub Glub: Woah what am I doing in depths of the ocean? I seemed to lost my memory. aghh It's cold, scary, and spooooky down here.",
-        "Glub Glub: I don't remember anything, but I have a feeling that I MUST find Meow Meow. The issue is...",
-        "Glub Glub: Who is Meow Meow?",
-        "Glub Glub: What is a Meow Meow?",
-        "Glub Glub: Where is Meow Meow?",
-        "Glub Glub: What does Meow Meow mean to me?",
-        "use \"WASD\" to move",
-        ""
-    ];
+class dialogue_manager {
+    constructor(dialogue_text_element, dialogues, dialogue_sound) {
+        this.dialogue_text_element = dialogue_text_element;
+        this.dialogues = dialogues;
+        this.dialogue_sound = dialogue_sound;
+        this.current_dialogue_index = 0;
+        this.is_typing = false;
+        this.on_complete = null;
+    }
 
-    let currentDialogueIndex = 0;
-    let isTyping = false;
-
-    function typeWriter(text, onComplete) {
-        isTyping = true;
-        let i = 0;
-        dialogueTextElement.innerHTML = "";
-        function typing() {
-            if (i < text.length) {
-                dialogueTextElement.innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typing, 40);
-            } else {
-                isTyping = false;
-                if (onComplete) onComplete();
-            }
+    type_writer(text, on_complete) {
+        this.is_typing = true;
+        if (this.dialogue_sound) {
+            // this.dialogue_sound.currentTime = 0;
+            this.dialogue_sound.play();
         }
+
+        let i = 0;
+        this.dialogue_text_element.innerHTML = "";
+
+        const typing = () => {
+            if (i < text.length) {
+                this.dialogue_text_element.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typing, 25);
+            } else {
+                this.is_typing = false;
+                if (this.dialogue_sound) {
+                    this.dialogue_sound.pause();
+                }
+                if (on_complete) {
+                    on_complete();
+                }
+            }
+        };
         typing();
     }
 
-    function showNextDialogue() {
-        if (isTyping || currentDialogueIndex >= dialogues.length) {
+    show_next_dialogue() {
+        if (this.is_typing) {
+            this.is_typing = false;
+            this.dialogue_text_element.innerHTML = this.dialogues[this.current_dialogue_index -1];
+            if (this.dialogue_sound) {
+                this.dialogue_sound.pause();
+            }
             return;
         }
-        typeWriter(dialogues[currentDialogueIndex], () => {
-            currentDialogueIndex++;
-        });
+
+        if (this.current_dialogue_index < this.dialogues.length) {
+            this.type_writer(this.dialogues[this.current_dialogue_index], () => {
+                this.current_dialogue_index++;
+                if (this.current_dialogue_index >= this.dialogues.length && this.on_complete) {
+                    this.on_complete();
+                }
+            });
+        }
     }
 
-    showNextDialogue();
-
-    document.body.addEventListener('click', showNextDialogue);
-});
+    start(on_complete) {
+        this.on_complete = on_complete;
+        this.current_dialogue_index = 0;
+        this.show_next_dialogue();
+    }
+}

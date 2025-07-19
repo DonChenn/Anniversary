@@ -1,14 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const slideshowContainer = document.getElementById('slideshow-container');
-    const dialogueTextElement = document.getElementById('dialogue-text');
+    const slideshow_container = document.getElementById('slideshow-container');
+    const dialogue_text_element = document.getElementById('dialogue-text');
+    const dialogue_sound = document.getElementById('dialogue-sound');
+    const background_music = document.getElementById('background-music');
+    const whirlpool_effect = document.getElementById('whirlpool-effect');
+
     const images = [
-        'assets/art/f1.png',
-        'assets/art/f2.png',
-        'assets/art/f3.png',
-        'assets/art/f4.png',
-        'assets/art/f5.png'
+        'assets/art/f1.png', 'assets/art/f2.png', 'assets/art/f3.png',
+        'assets/art/f4.png', 'assets/art/f5.png', 'assets/art/f6.png'
     ];
     const dialogues = [
+        ["Click happy cat inside the box to advance dialogue"],
         ["Meow Meow: Wowowowowow 7 years... It feels like just yesterday we met."],
         ["Glub Glub: Happy anniversary! I can't wait to see what's in store for us this year!"],
         ["Meow Meow: WOAH what is that?! Be Careful!"],
@@ -16,67 +18,45 @@ document.addEventListener('DOMContentLoaded', () => {
         ["Glub Glub: AAHDGGJSLDahaheaghagqgda~~~~~"]
     ];
 
-    let currentImageIndex = 0;
-    let currentDialogueIndex = -1;
-    let isTyping = false;
+    let current_image_index = 0;
+    let music_started = false;
 
-    function typeWriter(text, onComplete) {
-        isTyping = true;
-        let i = 0;
-        dialogueTextElement.innerHTML = "";
-        function typing() {
-            if (i < text.length) {
-                dialogueTextElement.innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typing, 50);
-            } else {
-                isTyping = false;
-                if (onComplete) onComplete();
+    let dialogue_manager_instance = new dialogue_manager(dialogue_text_element, dialogues[0], dialogue_sound);
+
+    function show_content(image_index) {
+        if (image_index < images.length) {
+            if (image_index === 4) {
+                background_music.pause();
+                whirlpool_effect.play();
             }
-        }
-        typing();
-    }
-
-    function showContent(imageIndex) {
-        if (imageIndex < images.length) {
-            slideshowContainer.style.backgroundImage = `url('${images[imageIndex]}')`;
-            currentDialogueIndex = 0;
-            typeWriter(dialogues[imageIndex][currentDialogueIndex]);
+            slideshow_container.style.backgroundImage = `url('${images[image_index]}')`;
+            dialogue_manager_instance = new dialogue_manager(dialogue_text_element, dialogues[image_index], dialogue_sound);
+            dialogue_manager_instance.start();
         } else {
-            window.location.href = 'welcome.html?from=login';
+            setTimeout(() => {
+                document.body.classList.add('fade-out');
+                setTimeout(() => {
+                    window.location.href = 'welcome.html?from=login';
+                }, 2000);
+            }, 2000);
         }
     }
 
-    images.forEach(src => {
-        const img = new Image();
-        img.src = src;
-    });
+    images.forEach(src => { const img = new Image(); img.src = src; });
 
-    showContent(currentImageIndex);
+    show_content(current_image_index);
 
     document.body.addEventListener('click', () => {
-        if (isTyping) return;
-
-        const currentDialogueSet = dialogues[currentImageIndex];
-
-        if (currentDialogueIndex < currentDialogueSet.length - 1) {
-            currentDialogueIndex++;
-            typeWriter(currentDialogueSet[currentDialogueIndex]);
+        if (!music_started) {
+            background_music.play();
+            music_started = true;
         }
-        else {
-            currentImageIndex++;
-            if (currentImageIndex < images.length) {
-                showContent(currentImageIndex);
-            } else {
-                setTimeout(() => {
-                    document.body.classList.add('fade-out');
 
-                    setTimeout(() => {
-                        window.location.href = 'welcome.html?from=login';
-                    }, 2000);
-
-                }, 2000);
-            }
+        if (dialogue_manager_instance.is_typing || dialogue_manager_instance.current_dialogue_index < dialogue_manager_instance.dialogues.length) {
+            dialogue_manager_instance.show_next_dialogue();
+        } else {
+            current_image_index++;
+            show_content(current_image_index);
         }
     });
 });
