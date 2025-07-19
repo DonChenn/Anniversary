@@ -12,7 +12,6 @@ class dialogue_manager {
     type_writer(text, on_complete) {
         this.is_typing = true;
         if (this.dialogue_sound) {
-            this.dialogue_sound.currentTime = 0;
             this.dialogue_sound.play();
         }
 
