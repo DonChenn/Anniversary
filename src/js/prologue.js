@@ -27,18 +27,18 @@ document.addEventListener('DOMContentLoaded', () => {
         if (image_index < images.length) {
             if (image_index === 4) {
                 background_music.pause();
-                whirlpool_effect.play();
             }
             slideshow_container.style.backgroundImage = `url('${images[image_index]}')`;
             dialogue_manager_instance = new dialogue_manager(dialogue_text_element, dialogues[image_index], dialogue_sound);
             dialogue_manager_instance.start();
         } else {
+            whirlpool_effect.play();
             setTimeout(() => {
                 document.body.classList.add('fade-out');
                 setTimeout(() => {
                     window.location.href = 'spawn.html?from=login';
-                }, 2000);
-            }, 2000);
+                }, 4500);
+            }, 4500);
         }
     }
 
