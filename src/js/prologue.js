@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 document.body.classList.add('fade-out');
                 setTimeout(() => {
-                    window.location.href = 'welcome.html?from=login';
+                    window.location.href = 'spawn.html?from=login';
                 }, 2000);
             }, 2000);
         }

@@ -18,22 +18,36 @@ document.addEventListener('DOMContentLoaded', () => {
     const from = url_params.get('from');
 
     let path_dict = {
-        welcome: [null, "boat"],
-        boat: ["welcome", "next2"]
+        spawn: [null, "kelp_forest", null, null],
+        kelp_forest:["spawn", "zzz", null, null],
+        zzz: ["kelp_forest", "jellyfish_fields", "wallace", "crevice"],
+        crevice: [null, null, "zzz", "sunken_ship"],
+        sunken_ship: [null, null, "crevice", null],
+        jellyfish_fields: ["zzz", null, null, "hydrothermal_vents"],
+        hydrothermal_vents: [null, "crystal_cave", "jellyfish_fields", null],
+        crystal_cave: ["hydrothermal_vents", null, null, null],
+        wallace: [null, null, "home", "zzz"],
+        home: [null, null, null, "wallace"]
     }
 
     const pages = path_dict[page];
-    const prev = pages[0];
-    const next = pages[1];
+    const left = pages[0];
+    const right = pages[1];
+    const up = pages[2];
+    const down = pages[3];
 
     let is_flipped = false;
 
-    if (from === prev) {
+    if (from === left) {
         x = 0;
-    } else if (from === next) {
+    } else if (from === right) {
         x = window.innerWidth;
         is_flipped = true;
         character_img.classList.add('flipped');
+    } else if (from === up){
+        y = 0;
+    } else if (from === down) {
+        y = window.innerHeight;
     } else if (from === "login") {
         x = window.innerWidth / 3;
         y = window.innerHeight / 1.4;
@@ -105,11 +119,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
         update_position();
 
-        if (x < 0 && prev) {
-            window.location.href = `${prev}.html?from=${page}`;
+        if (x < 0 && left) {
+            window.location.href = `${left}.html?from=${page}`;
             System.exit(0);
-        } else if (x > window.innerWidth && next) {
-            window.location.href = `${next}.html?from=${page}`;
+        } else if (x > window.innerWidth && right) {
+            window.location.href = `${right}.html?from=${page}`;
+            System.exit(0);
+        } else if (y < 0 && up) {
+            window.location.href = `${up}.html?from=${page}`;
+            System.exit(0);
+        } else if (y > window.innerHeight && down) {
+            window.location.href = `${down}.html?from=${page}`;
             System.exit(0);
         }
 
