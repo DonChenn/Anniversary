@@ -6,8 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const dialogues = [
         "Glub Glub: There's something glistening over there...",
-        "Glub Glub: it's a bottle!",
+        "Glub Glub: it's a bottle with some letter inside!",
         "Glub Glub: I better move quickly before the sharks eat me.",
+        "Use ␣ to interact",
         ""
     ];
 
