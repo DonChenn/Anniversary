@@ -42,8 +42,9 @@ function initialize_login_form() {
         const username = username_input.value;
         const password = password_input.value;
 
-        if (username === "glub glub" && password === "meow meow") {
-            message_element.textContent = `Entering the glub glub world...`;
+        if ((username === "glub glub" && password === "meow meow")
+            || (username === "Glub Glub" && password === "Meow Meow")) {
+            message_element.textContent = `Entering Glub World...`;
 
             setTimeout(() => {
                 document.body.classList.add('fade-out');
