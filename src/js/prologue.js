@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     let current_image_index = 0;
-    let music_started = false;
 
     let dialogue_manager_instance = new dialogue_manager(dialogue_text_element, dialogues[0], dialogue_sound);
 
