@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const background_music = document.getElementById('background-music');
     const whirlpool_effect = document.getElementById('whirlpool-effect');
 
+    background_music.play();
+
     const images = [
         'assets/art/f1.png', 'assets/art/f2.png', 'assets/art/f3.png',
         'assets/art/f4.png', 'assets/art/f5.png', 'assets/art/f6.png'
@@ -19,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     let current_image_index = 0;
-    let music_started = false;
 
     let dialogue_manager_instance = new dialogue_manager(dialogue_text_element, dialogues[0], dialogue_sound);
 
@@ -33,12 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
             dialogue_manager_instance.start();
         } else {
             whirlpool_effect.play();
+            document.body.classList.add('fade-out');
             setTimeout(() => {
-                document.body.classList.add('fade-out');
                 setTimeout(() => {
                     window.location.href = 'spawn.html?from=login';
-                }, 4500);
-            }, 4500);
+                }, 6000);
+            }, 6000);
         }
     }
 
@@ -47,11 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
     show_content(current_image_index);
 
     document.body.addEventListener('click', () => {
-        if (!music_started) {
-            background_music.play();
-            music_started = true;
-        }
-
         if (dialogue_manager_instance.is_typing || dialogue_manager_instance.current_dialogue_index < dialogue_manager_instance.dialogues.length) {
             dialogue_manager_instance.show_next_dialogue();
         } else {

@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Glub Glub: What is a Meow Meow?",
         "Glub Glub: Where is Meow Meow?",
         "Glub Glub: What does Meow Meow mean to me?",
-        "I need to find a way to get back to Meow Meow.",
+        "Glub Glub: I need to find a way to get back to Meow Meow.",
         'use "WASD" to move',
         ""
     ];

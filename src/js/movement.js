@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
         crevice: [null, null, "zzz", "sunken_ship"],
         sunken_ship: [null, null, "crevice", null],
         jellyfish_fields: ["zzz", null, null, "hydrothermal_vents"],
-        hydrothermal_vents: [null, "crystal_cave", "jellyfish_fields", null],
-        crystal_cave: ["hydrothermal_vents", null, null, null],
+        hydrothermal_vents: [null, "crystal_crab_cave", "jellyfish_fields", null],
+        crystal_crab_cave: ["hydrothermal_vents", null, null, null],
         wallace: [null, null, "home", "zzz"],
         home: [null, null, null, "wallace"]
     }
