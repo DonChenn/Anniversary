@@ -1,0 +1,109 @@
+/* src/css/map.css */
+#map-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Omori', sans-serif;
+}
+
+#map-container {
+    width: 95%;
+    max-width: 1200px;
+    height: 90vh;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 15px;
+    grid-template-areas:
+        ". . home . ."
+        ". . wallace . ."
+        "spawn kelp_forest zzz jellyfish_fields ."
+        ". . crevice hydrothermal_vents crystal_crab_cave"
+        ". . sunken_ship . .";
+}
+
+.map-location {
+    background-color: white;
+    border: 3px solid #000;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    text-transform: capitalize;
+    color: black;
+}
+
+.map-location:not(.visited) {
+    background-color: white;
+    color: black;
+    border-color: #444;
+}
+
+/* --- Assigning locations to grid areas --- */
+#map-home { grid-area: home; }
+#map-wallace { grid-area: wallace; }
+#map-spawn { grid-area: spawn; }
+#map-kelp_forest { grid-area: kelp_forest; }
+#map-zzz { grid-area: zzz; }
+#map-jellyfish_fields { grid-area: jellyfish_fields; }
+#map-crevice { grid-area: crevice; }
+#map-sunken_ship { grid-area: sunken_ship; }
+#map-hydrothermal_vents { grid-area: hydrothermal_vents; }
+#map-crystal_crab_cave { grid-area: crystal_crab_cave; }
+
+
+/* --- Arrow Base Styling --- */
+.visited::after,
+.visited::before {
+    content: '';
+    position: absolute;
+    color: white;
+    font-size: 3em;
+    font-weight: bold;
+    z-index: -1;
+    text-shadow: 0 0 5px black;
+}
+
+/* --- Arrow Definitions Based on path_dict --- */
+
+/* Horizontal Arrows (Right) */
+#map-spawn.visited::after { content: '→'; right: -2em; top: 50%; transform: translateY(-50%); }
+#map-kelp_forest.visited::after { content: '→'; right: -0.7em; top: 50%; transform: translateY(-50%); }
+#map-zzz.visited[id="map-zzz"]::after { content: '→'; right: -0.7em; top: 50%; transform: translateY(-50%); } /* Specific to ZZZ -> Jellyfish */
+#map-hydrothermal_vents.visited::after { content: '→'; right: -0.7em; top: 50%; transform: translateY(-50%); }
+
+/* Vertical Arrows (Up) */
+#map-wallace.visited::before { content: '↑'; top: -0.6em; left: 50%; transform: translateX(-50%); } /* Wallace -> Home */
+#map-zzz.visited::before { content: '↑'; top: -0.6em; left: 50%; transform: translateX(-50%); } /* ZZZ -> Wallace */
+
+
+/* Vertical Arrows (Down) */
+#map-crevice.visited::after { content: '↓'; bottom: -0.6em; left: 50%; transform: translateX(-50%); } /* Crevice -> Sunken Ship */
+#map-jellyfish_fields.visited::after { content: '↓'; bottom: -0.6em; left: 50%; transform: translateX(-50%); } /* Jellyfish Fields -> Hydrothermal */
+
+/* ZZZ to Crevice (down) needs a different pseudo-element to avoid conflict */
+#map-zzz.visited > div::after, #map-zzz.visited::after {
+    content: '↓';
+    position: absolute;
+    color: white;
+    font-size: 3em;
+    font-weight: bold;
+    z-index: -1;
+    text-shadow: 0 0 5px black;
+    bottom: -0.6em;
+    left: 50%;
+    transform: translateX(-50%);
+    right: auto; /* Override horizontal arrow */
+    top: auto; /* Override horizontal arrow */
+}

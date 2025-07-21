@@ -6,6 +6,7 @@
   <title>Welcome!</title>
   <link rel="stylesheet" href="css/crystal_crab_cave.css">
   <link rel="stylesheet" href="css/ocean.css">
+  <link rel="stylesheet" href="css/map.css">
   <link rel="icon" href="assets/sprites/glubglub.gif" type="image/png">
 </head>
 <body>
@@ -22,12 +23,18 @@
   <p id="dialogue-text"></p>
 </div>
 
+<div id="map-overlay">
+  <div id="map-container"></div>
+</div>
+
 <audio id="dialogue-sound" src="assets/sound/dialogue.mp3" loop></audio>
 <audio id="background-music" src="assets/sound/crystal_crab_cave.mp3" loop></audio>
+<audio id="shutter_sound" src="assets/sound/shutter_sound.mp3" loop></audio>
 
 <script src="js/movement.js"></script>
 <script src="js/dialogue.js"></script>
 <script src="js/crystal_crab_cave.js"></script>
+<script src="js/map.js"></script>
 
 </body>
 </html>

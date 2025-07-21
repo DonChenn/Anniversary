@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const character = document.getElementById('character');
     const character_img = character.querySelector('img');
 
-    const norm_speed = 5;
-    const sprint_speed = 10;
+    let norm_speed = 5;
+    let sprint_speed = 10;
     let speed = norm_speed;
 
     const path = window.location.pathname;
@@ -16,6 +16,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const query_string = window.location.search;
     const url_params = new URLSearchParams(query_string);
     const from = url_params.get('from');
+
+    if (page === "crystal_crab_cave") {
+        norm_speed = 1;
+        sprint_speed = 2;
+    }
+
+    let visited_locations = JSON.parse(localStorage.getItem('visited_locations')) || [];
+    if (!visited_locations.includes(page)) {
+        visited_locations.push(page);
+        localStorage.setItem('visited_locations', JSON.stringify(visited_locations));
+    }
 
     let path_dict = {
         spawn: [null, "kelp_forest", null, null],

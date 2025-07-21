@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const runway_music = document.getElementById("background-music");
+    const shutter_sound = document.getElementById("shutter_sound");
     runway_music.pause();
     document.addEventListener('keydown', (event) => {
         if (event.code !== 'Space') {
@@ -35,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (is_near_switch) {
             document.body.classList.add('activated');
             runway_music.play();
+            shutter_sound.play();
         }
     });
 });
