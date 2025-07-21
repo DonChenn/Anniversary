@@ -85,6 +85,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+
+    function navigate_to(page_name) {
+        const backgroundMusic = document.getElementById('background-music');
+        if (backgroundMusic) {
+            sessionStorage.setItem('music_time', backgroundMusic.currentTime);
+        }
+        window.location.href = `${page_name}.html?from=${page}`;
+        System.exit(0);
+    }
+
     function move_loop() {
         if (keys_pressed.Shift) {
             speed = sprint_speed;
@@ -120,17 +130,13 @@ document.addEventListener('DOMContentLoaded', () => {
         update_position();
 
         if (x < 0 && left) {
-            window.location.href = `${left}.html?from=${page}`;
-            System.exit(0);
+            navigate_to(left);
         } else if (x > window.innerWidth && right) {
-            window.location.href = `${right}.html?from=${page}`;
-            System.exit(0);
+            navigate_to(right);
         } else if (y < 0 && up) {
-            window.location.href = `${up}.html?from=${page}`;
-            System.exit(0);
+            navigate_to(up);
         } else if (y > window.innerHeight && down) {
-            window.location.href = `${down}.html?from=${page}`;
-            System.exit(0);
+            navigate_to(down);
         }
 
         requestAnimationFrame(move_loop);
