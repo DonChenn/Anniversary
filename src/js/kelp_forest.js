@@ -41,12 +41,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const dialogues = [
                 "Seaweed Puffer: ohhh mannn what am I going to do???",
                 "Seaweed Puffer: my dog ran away from me.",
-                "Seaweed Puffer: I took my eyes off of him for just a second and he's gone...",
-                "Seaweed Puffer: oh hey! you!",
+                "Seaweed Puffer: i took my eyes off of him for just a second and he's gone...",
+                "Seaweed Puffer: hey! you!",
                 "Seaweed Puffer: could you help me find my dog?",
                 "Glub Glub: mmm I guess so, only if you can hel-",
                 "Seaweed Puffer: PERFECT",
-                "Seaweed Puffer: you can probably find him at the Jellyfish Casino.",
+                "Seaweed Puffer: i last saw him when i was at the jellyfish casino.",
                 ""
             ];
 
