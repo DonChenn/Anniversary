@@ -45,9 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        const puffer_x = window.innerWidth / 1.4;
-        const puffer_y = window.innerHeight / 1.7;
-        const interaction_radius = 75;
+        const puffer_x = window.innerWidth / 1.5;
+        const puffer_y = window.innerHeight / 1.45;
+        const interaction_radius = 100;
 
         const is_near_puffer = Math.abs(x - puffer_x) < interaction_radius &&
             Math.abs(y - puffer_y) < interaction_radius;

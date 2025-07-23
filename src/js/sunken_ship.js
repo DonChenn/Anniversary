@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        const bottle_x = window.innerWidth / 2.3;
-        const bottle_y = window.innerHeight / 1.2;
+        const bottle_x = window.innerWidth / 2.1;
+        const bottle_y = window.innerHeight / 1.8;
         const interaction_radius = 75;
 
         const is_near_bottle = Math.abs(x - bottle_x) < interaction_radius &&
