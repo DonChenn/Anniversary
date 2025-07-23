@@ -1,0 +1,20 @@
+body {
+    background: url('../assets/art/seaweed_castle.gif');
+}
+
+#seaweed_puffer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+#quest_icon, #quest_pending_icon {
+    position: absolute;
+    bottom: 120px; /* Adjust as needed to position above the puffer */
+    right: 50px;   /* Adjust as needed to position above the puffer */
+    transform: scale(0.5);
+}
+
+#quest_icon img, #quest_pending_icon img {
+    scale: 0.5;
+}

@@ -1,7 +1,7 @@
 // src/js/map.js
 document.addEventListener('DOMContentLoaded', () => {
     const all_locations = [
-        "home", "wallace", "spawn", "kelp_forest", "zzz",
+        "home", "wallace", "spawn", "seaweed_castle", "fork",
         "jellyfish_fields", "crevice", "hydrothermal_vents",
         "crystal_crab_cave", "sunken_ship"
     ];

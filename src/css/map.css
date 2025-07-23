@@ -24,7 +24,7 @@
     grid-template-areas:
         ". . home . ."
         ". . wallace . ."
-        "spawn kelp_forest zzz jellyfish_fields ."
+        "spawn seaweed_castle fork jellyfish_fields ."
         ". . crevice hydrothermal_vents crystal_crab_cave"
         ". . sunken_ship . .";
 }
@@ -54,8 +54,8 @@
 #map-home { grid-area: home; }
 #map-wallace { grid-area: wallace; }
 #map-spawn { grid-area: spawn; }
-#map-kelp_forest { grid-area: kelp_forest; }
-#map-zzz { grid-area: zzz; }
+#map-seaweed_castle { grid-area: seaweed_castle; }
+#map-fork { grid-area: fork; }
 #map-jellyfish_fields { grid-area: jellyfish_fields; }
 #map-crevice { grid-area: crevice; }
 #map-sunken_ship { grid-area: sunken_ship; }
@@ -79,13 +79,13 @@
 
 /* Horizontal Arrows (Right) */
 #map-spawn.visited::after { content: '→'; right: -2em; top: 50%; transform: translateY(-50%); }
-#map-kelp_forest.visited::after { content: '→'; right: -0.7em; top: 50%; transform: translateY(-50%); }
-#map-zzz.visited[id="map-zzz"]::after { content: '→'; right: -0.7em; top: 50%; transform: translateY(-50%); } /* Specific to ZZZ -> Jellyfish */
+#map-seaweed_castle.visited::after { content: '→'; right: -0.7em; top: 50%; transform: translateY(-50%); }
+#map-fork.visited[id="map-fork"]::after { content: '→'; right: -0.7em; top: 50%; transform: translateY(-50%); }
 #map-hydrothermal_vents.visited::after { content: '→'; right: -0.7em; top: 50%; transform: translateY(-50%); }
 
 /* Vertical Arrows (Up) */
 #map-wallace.visited::before { content: '↑'; top: -0.6em; left: 50%; transform: translateX(-50%); } /* Wallace -> Home */
-#map-zzz.visited::before { content: '↑'; top: -0.6em; left: 50%; transform: translateX(-50%); } /* ZZZ -> Wallace */
+#map-fork.visited::before { content: '↑'; top: -0.6em; left: 50%; transform: translateX(-50%); }
 
 
 /* Vertical Arrows (Down) */
@@ -93,7 +93,7 @@
 #map-jellyfish_fields.visited::after { content: '↓'; bottom: -0.6em; left: 50%; transform: translateX(-50%); } /* Jellyfish Fields -> Hydrothermal */
 
 /* ZZZ to Crevice (down) needs a different pseudo-element to avoid conflict */
-#map-zzz.visited > div::after, #map-zzz.visited::after {
+#map-fork.visited > div::after, #map-fork.visited::after {
     content: '↓';
     position: absolute;
     color: white;
