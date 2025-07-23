@@ -36,6 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
             current_dialogue = null;
         });
 
+    } else {
+        document.getElementById('dialogue-box').style.display = 'none';
     }
 
     document.addEventListener('keydown', (event) => {

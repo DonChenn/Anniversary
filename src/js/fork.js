@@ -25,5 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
             dialogue_box.style.display = 'none';
             localStorage.setItem('fork_intro', 'true');
             current_dialogue = null;
-        });    }
+        });
+    } else {
+        document.getElementById('dialogue-box').style.display = 'none';
+    }
 })
