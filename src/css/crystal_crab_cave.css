@@ -3,6 +3,6 @@ body {
 }
 
 body.activated {
-    background: url('../assets/art/rave_cave.gif');
+    background: url('../assets/art/crystal_crab_cave.gif');
     background-size: cover;
 }
