@@ -20,6 +20,11 @@ body {
     font-family: Omori, sans-serif;
     font-size: 30px;
     font-weight: bold;
+    display: flex; /* Make the body a flex container */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Make body take up full viewport height */
+    margin: 0; /* Remove default body margin */
 }
 
 #start-screen {
@@ -61,9 +66,6 @@ body {
 }
 
 .App {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     text-align: center;
 }
 

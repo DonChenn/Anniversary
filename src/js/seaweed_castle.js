@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (localStorage.getItem('has_seen_intro') !== 'true') {
         const dialogues = [
-            "Glub Glub: Oh look its a pufferfish.",
+            "Glub Glub: Oh look its a stupid looking pufferfish.",
             "Glub Glub: I wonder if he knows anything about a Meow Meow.",
             "Use ␣ to interact",
             ""
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (localStorage.getItem('dog_quest_accepted') === 'true') {
                 const dialogues = [
-                    "Stupid Looking Pufferfish: i was last with him when i was at the jellyfish casino.",
+                    "Stupid Looking Pufferfish: help find my dog, i was last with him when i was at the jellyfish casino.",
                     ""
                 ];
                 const accepted_dialogue = new dialogue_manager(dialogue_text_element, dialogues, dialogue_sound);

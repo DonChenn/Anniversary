@@ -12,9 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (localStorage.getItem('fork_intro') !== 'true') {
         const dialogues = [
-            "Glub Glub: there seems to be an object blocking the path above me...",
-            "Glub Glub: but for now... where can i find this jellyfish casino?",
-            "Glub Glub: coins! following them is probably a good indicator!",
+            "Glub Glub: i have no clue where this casino is.",
+            "Glub Glub: if i swim up a little higher, i could have a better view...",
+            "Glub Glub: huhh?? there seems to be something blocking the path upwards.",
+            "Glub Glub: maybe there's another clue to see where it is.",
             "use m to view the map",
             ""
         ];

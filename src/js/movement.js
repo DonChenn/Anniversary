@@ -60,8 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (from === down) {
         y = window.innerHeight;
     } else if (from === "login") {
-        x = window.innerWidth / 3;
-        y = window.innerHeight / 1.4;
+        x = window.innerWidth / 3.1;
+        y = window.innerHeight / 1.7;
     }
 
     const keys_pressed = {
