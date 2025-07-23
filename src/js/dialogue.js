@@ -64,7 +64,7 @@ class dialogue_manager {
     start(on_complete) {
         this.on_complete = on_complete;
         this.current_dialogue_index = 0;
-        this.is_finished = false; // Reset the flag on start
+        this.is_finished = false;
         this.show_next_dialogue();
     }
 }

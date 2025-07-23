@@ -1,3 +1,19 @@
 body {
     background: url('../assets/art/kelp_forest.gif');
 }
+
+#seaweed_puffer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+#quest {
+    position: absolute;
+    bottom: 30%;
+    right: 0;
+}
+
+#quest img {
+    scale: 0.5;
+}
