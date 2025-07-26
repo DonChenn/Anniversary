@@ -1,3 +1,10 @@
 body {
     background: url("../assets/art/jelly_city.gif");
 }
+
+#dog {
+    position: absolute;
+    bottom: -180px;
+    right: 200px;
+    scale: 50%;
+}

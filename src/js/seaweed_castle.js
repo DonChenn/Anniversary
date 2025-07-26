@@ -4,13 +4,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const dialogue_sound = document.getElementById('dialogue-sound');
     const quest_exclaim = document.getElementById('quest_icon');
     const quest_pending = document.getElementById('quest_pending_icon');
+    const dog = document.getElementById('dog');
     let current_dialogue = null;
+
+    if (!localStorage.getItem('quest_complete')) {
+        dog.style.display = 'none';
+    }
 
     if (localStorage.getItem('dog_quest_accepted') === 'true') {
         quest_exclaim.style.display = 'none';
         quest_pending.style.display = 'block';
     } else {
         quest_exclaim.style.display = 'block';
+        quest_pending.style.display = 'none';
+    }
+
+    if (localStorage.getItem('quest_complete')) {
         quest_pending.style.display = 'none';
     }
 
@@ -56,16 +65,40 @@ document.addEventListener('DOMContentLoaded', () => {
             dialogue_box.style.display = 'block';
 
             if (localStorage.getItem('dog_quest_accepted') === 'true') {
-                const dialogues = [
-                    "Stupid Looking Pufferfish: help find my dog, i was last with him when i was at the jellyfish casino.",
-                    ""
-                ];
-                const accepted_dialogue = new dialogue_manager(dialogue_text_element, dialogues, dialogue_sound);
-                current_dialogue = accepted_dialogue;
-                accepted_dialogue.start(() => {
-                    dialogue_box.style.display = 'none';
-                    current_dialogue = null;
-                });
+                if (localStorage.getItem('dog_picked_up')) {
+                    const dialogues = [
+                        "Stupid Looking Pufferfish: thank you so much!",
+                        "Glub Glub: no worries. could you help me out?",
+                        "Glub Glub: have you seen a cat anywhere? i got a little lost.",
+                        "Stupid Looking Pufferfish: oh i have. ive seen a cat at the bottom of the ocean. he's a little shy.",
+                        "Glub Glub: oooh Meow Meow is a little sigma. ill take a look ty!",
+                        ""
+                    ];
+
+                    quest_pending.style.display = 'none';
+                    dog.style.display = 'block';
+
+                    localStorage.setItem('quest_complete', 'true');
+
+                    const complete_dialogue = new dialogue_manager(dialogue_text_element, dialogues, dialogue_sound);
+                    current_dialogue = complete_dialogue;
+                    complete_dialogue.start(() => {
+                        dialogue_box.style.display = 'none';
+                        current_dialogue = null;
+                    });
+
+                } else {
+                    const dialogues = [
+                        "Stupid Looking Pufferfish: help find my dog, i was last with him when i was at the jellyfish fields, just outside the city.",
+                        ""
+                    ];
+                    const accepted_dialogue = new dialogue_manager(dialogue_text_element, dialogues, dialogue_sound);
+                    current_dialogue = accepted_dialogue;
+                    accepted_dialogue.start(() => {
+                        dialogue_box.style.display = 'none';
+                        current_dialogue = null;
+                    });
+                }
             } else {
                 const dialogues = [
                     "Stupid Looking Pufferfish: ohhh mannn what am I going to do???",
@@ -75,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     "Stupid Looking Pufferfish: could you help me find my dog?",
                     "Glub Glub: mmm I guess so, only if you can hel-",
                     "Stupid Looking Pufferfish: PERFECT",
-                    "Stupid Looking Pufferfish: i was last with him when i was at the jellyfish casino.",
+                    "Stupid Looking Pufferfish: help find my dog, i was last with him when i was at the jellyfish fields, just outside the city.",
                     ""
                 ];
 

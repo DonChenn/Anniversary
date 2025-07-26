@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (localStorage.getItem('fork_intro') !== 'true') {
         const dialogues = [
-            "Glub Glub: i have no clue where this casino is.",
+            "Glub Glub: i have no clue where this city is.",
             "Glub Glub: if i swim up a little higher, i could have a better view...",
             "Glub Glub: huhh?? there seems to be something blocking the path upwards.",
             "Glub Glub: maybe there's another clue to see where it is.",
