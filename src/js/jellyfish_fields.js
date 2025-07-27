@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    if (localStorage.getItem('has_seen_intro') !== 'true') {
+    if (localStorage.getItem('jelly_intro') !== 'true') {
         const dialogues = [
             "Glub Glub: thats the dog! lemme catch him.",
             ""
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         current_dialogue = dialogue_manager_instance;
         dialogue_manager_instance.start(() => {
             dialogue_box.style.display = 'none';
-            localStorage.setItem('has_seen_intro', 'true');
+            localStorage.setItem('jelly_intro', 'true');
             current_dialogue = null;
         });
 
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const dog_x = window.innerWidth / 1.5;
-        const dog_y = window.innerHeight / 1.2;
+        const dog_y = window.innerHeight / 2.3;
         const interaction_radius = 100;
 
         const is_near_dog = Math.abs(x - dog_x) < interaction_radius &&

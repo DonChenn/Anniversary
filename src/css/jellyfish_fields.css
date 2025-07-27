@@ -4,7 +4,8 @@ body {
 
 #dog {
     position: absolute;
-    bottom: -180px;
+    bottom: 300px;
     right: 200px;
     scale: 50%;
+    rotate: 145deg;
 }

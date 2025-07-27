@@ -17,8 +17,8 @@ body {
 
 #quest_icon, #quest_pending_icon {
     position: absolute;
-    bottom: 120px; /* Adjust as needed to position above the puffer */
-    right: 50px;   /* Adjust as needed to position above the puffer */
+    bottom: 120px;
+    right: 50px;
     transform: scale(0.5);
 }
 

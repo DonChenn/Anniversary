@@ -31,8 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (localStorage.getItem('has_seen_intro') !== 'true') {
         const dialogues = [
-            "Glub Glub: Oh look its a stupid looking pufferfish.",
-            "Glub Glub: I wonder if he knows anything about a Meow Meow.",
+            "Glub Glub: (oh. look at that stupid looking pufferfish).",
+            "Glub Glub: i wonder if he knows anything about Meow Meow.",
             "Use ␣ to interact",
             ""
         ];
@@ -67,11 +67,15 @@ document.addEventListener('DOMContentLoaded', () => {
             if (localStorage.getItem('dog_quest_accepted') === 'true') {
                 if (localStorage.getItem('dog_picked_up')) {
                     const dialogues = [
-                        "Stupid Looking Pufferfish: thank you so much!",
-                        "Glub Glub: no worries. could you help me out?",
+                        "Stupid Looking Pufferfish: BARK BARK! you found him! thank you so much!",
+                        "Stupid Looking Pufferfish: oh, i was so worried! who’s a good boy? who’s a good boy?!",
+                        "Stupid Looking Pufferfish: here's some seaweed as a reward!",
+                        "Glub Glub: could you help me out now?",
                         "Glub Glub: have you seen a cat anywhere? i got a little lost.",
-                        "Stupid Looking Pufferfish: oh i have. ive seen a cat at the bottom of the ocean. he's a little shy.",
-                        "Glub Glub: oooh Meow Meow is a little sigma. ill take a look ty!",
+                        "Stupid Looking Pufferfish: oh yeah! I’ve seen a cat! For sure!",
+                        "Stupid Looking Pufferfish: i saw him way, way down there. at the bottom of the ocean. where the floor is",
+                        "Stupid Looking Pufferfish: he's a little judgy and he just stared at me with his big ol' whiskers",
+                        "Glub Glub: oooh Meow Meow is a little sigma. that sounds just like him. i'll take a look ty!",
                         ""
                     ];
 
@@ -102,13 +106,13 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 const dialogues = [
                     "Stupid Looking Pufferfish: ohhh mannn what am I going to do???",
-                    "Stupid Looking Pufferfish: my dog ran away from me.",
-                    "Stupid Looking Pufferfish: i took my eyes off of him for just a second and he's gone...",
+                    "Stupid Looking Pufferfish: my dog ran away from me or worse FLOATED",
+                    "Stupid Looking Pufferfish: i was counting my golden pebbles, I looked away for just one second, and POOF! he was gone…",
                     "Stupid Looking Pufferfish: hey! you!",
-                    "Stupid Looking Pufferfish: could you help me find my dog?",
+                    "Stupid Looking Pufferfish: you look like you could find things! could you help me find my dog?",
                     "Glub Glub: mmm I guess so, only if you can hel-",
-                    "Stupid Looking Pufferfish: PERFECT",
-                    "Stupid Looking Pufferfish: help find my dog, i was last with him when i was at the jellyfish fields, just outside the city.",
+                    "Stupid Looking Pufferfish: PERFECT! I KNEW IT!",
+                    "Stupid Looking Pufferfish: help find my dog, I last saw him when I was skipping him across the water in the Jellyfish Fields! Please find him!.",
                     ""
                 ];
 

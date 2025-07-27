@@ -2,6 +2,24 @@ body {
     background: url('../assets/art/sunken_ship.gif');
 }
 
+#catfish {
+    scale: 30%;
+    position: absolute;
+    bottom: -50px;
+    left: 100px;
+}
+
+#quest_icon, #quest_pending_icon {
+    position: absolute;
+    bottom: 20px;
+    left: 100px;
+    transform: scale(0.5);
+}
+
+#quest_icon img, #quest_pending_icon img {
+    scale: 0.5;
+}
+
 #note-overlay {
     display: none;
     position: fixed;
