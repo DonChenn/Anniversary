@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "Glub Glub: i need to find a way to get back to Meow Meow.",
             "Glub Glub: maybe the locals around here can help me find back home.",
             'use "WASD" to move',
+            "use L SHIFT to sprint",
             ""
         ];
 
