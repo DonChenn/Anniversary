@@ -21,8 +21,9 @@ body {
 }
 
 #note-overlay {
-    display: none;
+    display: flex;
     position: fixed;
+    scale: 2;
     top: 0;
     left: 0;
     width: 100%;
@@ -35,22 +36,25 @@ body {
 
 #note-content {
     position: relative;
-    text-align: center;
+    text-align: left;
+    width: 500px;
 }
 
-#note-image {
-    max-width: 500px;
+#note-open {
+    width: 100%;
+    height: auto;
     display: block;
 }
 
 #note-text {
     position: absolute;
-    top: 40%;
-    left: 50%;
+    top: 63%;
+    left: 57%;
     transform: translate(-50%, -50%);
-
     color: black;
-    font-size: 1.5em;
+    font-size: 1em;
     font-weight: bold;
-    width: 100%;
+    width: 90%;
+    box-sizing: border-box;
+    padding: 0 20px;
 }

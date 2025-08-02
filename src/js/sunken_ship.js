@@ -4,7 +4,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const dialogue_sound = document.getElementById('dialogue-sound');
     const quest_exclaim = document.getElementById('quest_icon');
     const quest_pending = document.getElementById('quest_pending_icon');
+    const note_overlay = document.getElementById('note-overlay');
+    const note_open_image = document.getElementById('note-open'); // Get reference to the <img> element
+    const note_text_element = document.getElementById('note-text'); // Get reference to the <p> element for note text
+    const character_element = document.getElementById('character'); // Get the character element to get its position
+
     let current_dialogue = null;
+    let note_current_state = 0;
+
+    note_overlay.style.display = 'none';
+    note_text_element.style.display = 'none';
 
     if (localStorage.getItem('catfish_quest_accepted') === 'true') {
         quest_exclaim.style.display = 'none';
@@ -44,23 +53,17 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('dialogue-box').style.display = 'none';
     }
 
-    let is_note_visible = false;
-
-    if (is_note_visible) {
-        note_overlay.style.display = 'none';
-        is_note_visible = false;
-        return;
-    }
-
     document.addEventListener('keydown', (event) => {
         if (event.code !== 'Space') {
             return;
         }
 
-        if (is_note_visible) {
-            note_overlay.style.display = 'none';
-            is_note_visible = false;
-            return;
+        let x = 0;
+        let y = 0;
+        if (character_element) {
+            const char_rect = character_element.getBoundingClientRect();
+            x = char_rect.left + char_rect.width / 2;
+            y = char_rect.top + char_rect.height / 2;
         }
 
         const bottle_x = window.innerWidth / 2.2;
@@ -76,9 +79,31 @@ document.addEventListener('DOMContentLoaded', () => {
         const is_near_catfish = Math.abs(x - catfish_x) < interaction_radius &&
             Math.abs(y - catfish_y) < interaction_radius;
 
-        if (is_near_bottle && localStorage.getItem('catfish_quest_complete')) {
-            note_overlay.style.display = 'flex';
-            is_note_visible = true;
+        if (is_near_bottle) {
+            if (note_current_state === 0) {
+                note_overlay.style.display = 'flex';
+                note_open_image.src = 'assets/sprites/closed_letter.png';
+                note_text_element.style.display = 'none';
+                note_current_state = 1;
+            } else if (note_current_state === 1) {
+                note_open_image.src = 'assets/sprites/open_letter.png';
+                note_text_element.style.display = 'block';
+                note_current_state = 2;
+            } else if (note_current_state === 2) {
+                note_overlay.style.display = 'none';
+                note_text_element.style.display = 'none';
+                note_open_image.src = '';
+                note_current_state = 0;
+            }
+            return;
+        } else {
+            if (note_current_state !== 0) {
+                note_overlay.style.display = 'none';
+                note_text_element.style.display = 'none';
+                note_open_image.src = '';
+                note_current_state = 0;
+                return;
+            }
         }
 
         if (is_near_catfish) {
