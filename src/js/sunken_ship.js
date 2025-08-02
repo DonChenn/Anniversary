@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const is_near_catfish = Math.abs(x - catfish_x) < interaction_radius &&
             Math.abs(y - catfish_y) < interaction_radius;
 
-        if (is_near_bottle) {
+        if (is_near_bottle && localStorage.getItem('catfish_quest_complete')) {
             if (note_current_state === 0) {
                 note_overlay.style.display = 'flex';
                 note_open_image.src = 'assets/sprites/closed_letter.png';
@@ -112,9 +112,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (localStorage.getItem('catfish_quest_accepted') === 'true') {
                 if (localStorage.getItem('fashion_show_won')) {
                     const dialogues = [
-                        "Finneas the Catfishing Catfish: thank you so much",
-                        "Finneas the Catfishing Catfish: heres the screw to open up the bottl",
-                        "Finneas the Catfishing Catfish: its all yours :3",
+                        "Nyatfish the Catfishing Catfish: oh lovely the first place prize! thank you so much.",
+                        "Nyatfish the Catfishing Catfish: here's the screw to open up the bottle",
+                        "Nyatfish the Catfishing Catfish: its all yours, now now shew :3",
                         ""
                     ];
                     quest_pending.style.display = 'none';
@@ -143,21 +143,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 const dialogues = [
                     "Glub Glub: ...excuse me?",
                     "Glub Glub: are you... a cat?",
-                    "Catfishing Catfish: a… a CAT? Darling, please. The nerve. Does this face scream “common land mammal” to you?",
+                    "Catfishing Catfish: a… a CAT? darling, please. the nerve. does this face scream “common land mammal” to you?",
                     "Catfishing Catfish: the sheer, unmitigated… oh, what’s the use (whiskers droop)",
-                    "Catfishing Catfish: it’s all a lie. a beautiful, shimmering lie. I’m a fraud",
+                    "Catfishing Catfish: it’s all a lie. a beautiful, shimmering lie. i’m a fraud",
                     "Glub Glub: so you're not a cat?",
                     "Glub Glub: this Stupid Looking Pufferfish was so sure that a cat with really nice whiskers was waiting at the bottom of the ocean",
                     "Catfishing Catfish: Puffy! that blabbering bubble! he must have seen my entry photo for the annual Deep Sea Fashion Gala!",
-                    "Catfishing Catfish: i may have… enhanced my look. Used a kelp filter. Maybe accentuated my whiskers to a degree that could be perceived as… feline",
-                    "Catfishing Catfish: It’s called CATFISHING, sweetie. It’s art",
-                    "Catfishing Catfish: An art that has RUINED ME!",
-                    "Catfishing Catfish: And now the Gala is about to start and I can’t go! They’re all expecting Finneas, the Feline of the Abyss",
-                    "Glub Glub: (whats that glimmering glass bottle, sealed with a cork. There’s a piece of paper inside)",
+                    "Catfishing Catfish: i may have… enhanced my look. used a kelp filter. maybe accentuated my whiskers to a degree that could be perceived as… feline",
+                    "Catfishing Catfish: it’s called CATFISHING, sweetie. it’s art",
+                    "Catfishing Catfish: an art that has RUINED ME!",
+                    "Catfishing Catfish: and now the Gala is about to start and I can’t go! they’re all expecting Nyatfish, the Feline of the Abyss",
+                    "Glub Glub: (whats that glimmering glass bottle, sealed with a cork. there’s a piece of paper inside)",
                     "Glub Glub: (that handwriting... its similar to Meow Meow!)",
                     "Glub Glub: hey that bottle! where'd you get that?",
-                    "Finneas the Catfishing Catfish: oh, that old thing? It just washed down here a few days ago",
-                    "Finneas the Catfishing Catfish: with your excellent colors and physique, go to the Fashion Gala for me and its all yours",
+                    "Nyatfish, the Feline of the Abyss: oh, that old thing? it just washed down here a few days ago",
+                    "Nyatfish, the Feline of the Abyss: with your excellent colors and physique, go to the Fashion Gala for me and its all yours",
                     ""
                 ];
 

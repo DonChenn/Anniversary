@@ -28,17 +28,34 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('visited_locations', JSON.stringify(visited_locations));
     }
 
-    let path_dict = {
-        spawn: [null, "seaweed_castle", null, null],
-        seaweed_castle:["spawn", "fork", null, null],
-        fork: ["seaweed_castle", "jellyfish_fields", "wallace", "crevice"],
-        crevice: [null, null, "fork", "sunken_ship"],
-        sunken_ship: [null, null, "crevice", null],
-        jellyfish_fields: ["fork", null, null, "hydrothermal_vents"],
-        hydrothermal_vents: [null, "crystal_crab_cave", "jellyfish_fields", null],
-        crystal_crab_cave: ["hydrothermal_vents", null, null, null],
-        wallace: [null, null, "home", "fork"],
-        home: [null, null, null, "wallace"]
+    let path_dict;
+
+    if (localStorage.getItem('catfish_quest_complete')) {
+        path_dict = {
+            spawn: [null, "seaweed_castle", null, null],
+            seaweed_castle:["spawn", "fork", null, null],
+            fork: ["seaweed_castle", "jellyfish_fields", "wallace", "crevice"],
+            crevice: [null, null, "fork", "sunken_ship"],
+            sunken_ship: [null, null, "crevice", null],
+            jellyfish_fields: ["fork", null, null, "hydrothermal_vents"],
+            hydrothermal_vents: [null, "crystal_crab_cave", "jellyfish_fields", null],
+            crystal_crab_cave: ["hydrothermal_vents", null, null, null],
+            wallace: [null, null, "home", "fork"],
+            home: [null, null, null, "wallace"]
+        }
+    } else {
+        path_dict = {
+            spawn: [null, "seaweed_castle", null, null],
+            seaweed_castle:["spawn", "fork", null, null],
+            fork: ["seaweed_castle", "jellyfish_fields", null, "crevice"],
+            crevice: [null, null, "fork", "sunken_ship"],
+            sunken_ship: [null, null, "crevice", null],
+            jellyfish_fields: ["fork", null, null, "hydrothermal_vents"],
+            hydrothermal_vents: [null, "crystal_crab_cave", "jellyfish_fields", null],
+            crystal_crab_cave: ["hydrothermal_vents", null, null, null],
+            wallace: [null, null, "home", "fork"],
+            home: [null, null, null, "wallace"]
+        }
     }
 
     const pages = path_dict[page];

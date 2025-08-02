@@ -30,4 +30,22 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         document.getElementById('dialogue-box').style.display = 'none';
     }
+
+    if (localStorage.getItem('catfish_quest_complete')) {
+        const dialogues = [
+            "Glub Glub: oh the path above is no longer blocked!",
+            "Glub Glub: i can finally just swim to the top.",
+            ""
+        ];
+
+        const dialogue_manager_instance = new dialogue_manager(dialogue_text_element, dialogues, dialogue_sound);
+        current_dialogue = dialogue_manager_instance;
+        dialogue_manager_instance.start(() => {
+            dialogue_box.style.display = 'none';
+            localStorage.setItem('fork_intro', 'true');
+            current_dialogue = null;
+        });
+    } else {
+        document.getElementById('dialogue-box').style.display = 'none';
+    }
 })
