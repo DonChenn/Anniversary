@@ -1,15 +1,13 @@
-// src/js/map.js
 document.addEventListener('DOMContentLoaded', () => {
     const all_locations = [
         "home", "wallace", "spawn", "seaweed_castle", "fork",
-        "jellyfish_fields", "crevice", "hydrothermal_vents",
+        "jellyfish_fields", "crevice", "hot_seat",
         "crystal_crab_cave", "sunken_ship"
     ];
 
     const map_overlay = document.getElementById('map-overlay');
     const map_container = document.getElementById('map-container');
 
-    // Hide the map as soon as the page loads
     if (map_overlay) {
         map_overlay.style.display = 'none';
     }
@@ -21,9 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         all_locations.forEach(location => {
             const location_element = document.createElement('div');
-            // Add a class and a unique ID for CSS grid positioning
             location_element.classList.add('map-location');
-            location_element.id = `map-${location}`; // e.g., id="map-spawn"
+            location_element.id = `map-${location}`;
 
             if (visited_locations.includes(location)) {
                 location_element.textContent = location.replace(/_/g, ' ');

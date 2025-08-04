@@ -37,9 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
             fork: ["seaweed_castle", "jellyfish_fields", "wallace", "crevice"],
             crevice: [null, null, "fork", "sunken_ship"],
             sunken_ship: [null, null, "crevice", null],
-            jellyfish_fields: ["fork", null, null, "hydrothermal_vents"],
-            hydrothermal_vents: [null, "crystal_crab_cave", "jellyfish_fields", null],
-            crystal_crab_cave: ["hydrothermal_vents", null, null, null],
+            jellyfish_fields: ["fork", null, null, "hot_seat"],
+            hot_seat: [null, "crystal_crab_cave", "jellyfish_fields", null],
+            crystal_crab_cave: ["hot_seat", null, null, null],
             wallace: [null, null, "home", "fork"],
             home: [null, null, null, "wallace"]
         }
@@ -50,9 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
             fork: ["seaweed_castle", "jellyfish_fields", null, "crevice"],
             crevice: [null, null, "fork", "sunken_ship"],
             sunken_ship: [null, null, "crevice", null],
-            jellyfish_fields: ["fork", null, null, "hydrothermal_vents"],
-            hydrothermal_vents: [null, "crystal_crab_cave", "jellyfish_fields", null],
-            crystal_crab_cave: ["hydrothermal_vents", null, null, null],
+            jellyfish_fields: ["fork", null, null, "hot_seat"],
+            hot_seat: [null, "crystal_crab_cave", "jellyfish_fields", null],
+            crystal_crab_cave: ["hot_seat", null, null, null],
             wallace: [null, null, "home", "fork"],
             home: [null, null, null, "wallace"]
         }
