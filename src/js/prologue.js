@@ -12,10 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
         'assets/art/intro3.png', 'assets/art/intro4.png', 'assets/art/intro5.png'
     ];
     const dialogues = [
-        ["Click happy cat inside the box to advance dialogue"],
-        ["Meow Meow: Wowowowowow 7 years... It feels like just yesterday we met."],
-        ["Glub Glub: Happy anniversary! I can't wait to see what's in store for us this year!"],
-        ["Meow Meow: WOAH what is that?! Be Careful!"],
+        ["Make sure to let the dialogue fully end before advancing. Click happy cat inside the box to advance dialogue."],
+        ["Meow Meow: wowowowowow 7 years... it feels like just yesterday we met."],
+        ["Glub Glub: happy anniversary! i can't wait to see what's in store for us this year!"],
+        ["Meow Meow: WOAH what is that?! be careful!"],
         ["Glub Glub: HELPPP SAVE ME!!"],
         ["Glub Glub: AAHDGGJSLDahaheaghagqgda~~~~~"]
     ];

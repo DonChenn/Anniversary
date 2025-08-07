@@ -17,7 +17,7 @@ function setup_confetti() {
 
 function handle_failed_login(count, message_element) {
     if (count === 1) {
-        message_element.textContent = 'Keep Trying!';
+        message_element.textContent = 'TIP: for the best experience, play in 1680x1050 resolution!';
     } else if (count === 2) {
         message_element.textContent = 'HINT: what are our nicknames?';
     } else if (count === 3) {
@@ -88,6 +88,7 @@ function initialize_start_screen() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    localStorage.clear();
     setup_confetti();
     initialize_login_form();
     initialize_start_screen();
