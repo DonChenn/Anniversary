@@ -13,5 +13,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 125000);
     }
 
-    setTimeout(startCredits, 5000);
+    setTimeout(startCredits, 3000);
 });

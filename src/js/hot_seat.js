@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             correct_answer: "133"
         },
         {
-            question: "Q5: How many SumOnes have we completed this past year?",
+            question: "Q5: How many SumOnes have you and Meow Meow completed this past year?",
             options: ["55", "102", "365", "78"],
             correct_answer: "78"
         },

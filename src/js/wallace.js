@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (localStorage.getItem('wallace_intro') !== 'true') {
         const dialogues = [
-            "Glub Glub: oh this was what was blocking the path above.",
+            "Glub Glub: OH this was what was blocking the path above!",
             "Glub Glub: excuse me? i'm looking for a friend, have you seen him? his name is Meow Meow.",
 
             "Wallace: Meow Meow. what a peculiar name for a fish. you know, that reminds me of the time i met a " +
@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             "Glub Glub: he's not a fish, he's a cat. he lives up there. at the top of the ocean. " +
             "i need to get to the surface.",
+
             "Wallace: the surface. oh, the big shiny ceiling. i touched it once. it was very wet, but on the " +
             "wrong side. it's not nearly as interesting as the bottom. have you ever tried to count all the " +
             "grains of sand down here? i have. i always get stuck after nine. it’s my unlucky number. " +
@@ -23,9 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             "Glub Glub: so you don't know the fastest way up?",
 
-            "Wallace: fast. you know, a snailfish once challenged me to a race. he was surprisingly quick. " +
-            "all zig-zaggy. it was a blur of slime and determination. i, of course, being a whale, created a rather " +
-            "large wake and he ended up somewhere near seaweed castle. i think i won, but he never came back with the trophy.",
+            "Wallace: fast. you know, a dog once challenged me to a race. he was surprisingly quick. " +
+            "all zig-zaggy. it was a blur of fur and determination. i, of course, being a whale, created a rather " +
+            "large wake and he ended up somewhere near Jellyfish Fields. i think i won, but he never came back with the trophy.",
 
             "Glub Glub: right. a race. of course. this is useless. how am i supposed to get all the way up there?",
 

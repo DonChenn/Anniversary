@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         "Glub Glub: could you help me out now?",
                         "Glub Glub: have you seen a cat anywhere? i got a little lost.",
                         "Stupid Looking Pufferfish: oh yeah! I’ve seen a cat for sure!",
-                        "Stupid Looking Pufferfish: i saw him way, way down there. at the bottom of the ocean. where the floor is",
+                        "Stupid Looking Pufferfish: i saw him way, way down there. at the bottom of the ocean where the floor is",
                         "Stupid Looking Pufferfish: he's a little judgy and he just stared at me with his big ol' whiskers",
                         "Glub Glub: oooh Meow Meow is a little sigma. that sounds just like him. i'll take a look ty!",
                         ""
@@ -105,14 +105,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             } else {
                 const dialogues = [
-                    "Stupid Looking Pufferfish: ohhh mannn what am I going to do???",
+                    "Stupid Looking Pufferfish: ohhh mannn what am i going to do???",
                     "Stupid Looking Pufferfish: my dog ran away from me or worse FLOATED",
-                    "Stupid Looking Pufferfish: i was counting my golden pebbles, I looked away for just one second, and POOF! he was gone…",
+                    "Stupid Looking Pufferfish: i was counting my golden pebbles, i looked away for just one second, and POOF! he was gone…",
                     "Stupid Looking Pufferfish: hey! you!",
                     "Stupid Looking Pufferfish: you look like you could find things! could you help me find my dog?",
                     "Glub Glub: mmm I guess so, only if you can hel-",
                     "Stupid Looking Pufferfish: PERFECT! I KNEW IT!",
-                    "Stupid Looking Pufferfish: help find my dog, I last saw him when I was skipping him across the water in the Jellyfish Fields! Please find him!.",
+                    "Stupid Looking Pufferfish: help find my dog, I last saw him when I was skipping him across the water in the Jellyfish Fields! please find him!.",
                     ""
                 ];
 
