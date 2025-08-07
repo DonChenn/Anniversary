@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         "Stupid Looking Pufferfish: here's some seaweed as a reward!",
                         "Glub Glub: could you help me out now?",
                         "Glub Glub: have you seen a cat anywhere? i got a little lost.",
-                        "Stupid Looking Pufferfish: oh yeah! I’ve seen a cat! For sure!",
+                        "Stupid Looking Pufferfish: oh yeah! I’ve seen a cat for sure!",
                         "Stupid Looking Pufferfish: i saw him way, way down there. at the bottom of the ocean. where the floor is",
                         "Stupid Looking Pufferfish: he's a little judgy and he just stared at me with his big ol' whiskers",
                         "Glub Glub: oooh Meow Meow is a little sigma. that sounds just like him. i'll take a look ty!",

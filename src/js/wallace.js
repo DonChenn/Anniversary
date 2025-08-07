@@ -3,16 +3,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const dialogue_box = document.getElementById('dialogue-box');
     const dialogue_sound = document.getElementById('dialogue-sound');
 
-    const dialogues = [
-        ""
-    ];
+    if (localStorage.getItem('wallace_intro') !== 'true') {
+        const dialogues = [
+            "",
+            ""
+        ];
 
-    const dialogue_manager_instance = new dialogue_manager(dialogue_text_element, dialogues, dialogue_sound);
-    dialogue_manager_instance.start(() => {
-        dialogue_box.style.display = 'none';
-    });
+        const dialogue_manager_instance = new dialogue_manager(dialogue_text_element, dialogues, dialogue_sound);
+        dialogue_manager_instance.start(() => {
+            dialogue_box.style.display = 'none';
+            localStorage.setItem('wallace_intro', 'true');
 
-    document.body.addEventListener('click', () => {
-        dialogue_manager_instance.show_next_dialogue();
-    });
+        });
+
+        document.body.addEventListener('click', () => {
+            dialogue_manager_instance.show_next_dialogue();
+        });
+    } else {
+        document.getElementById('dialogue-box').style.display = 'none';
+    }
 });

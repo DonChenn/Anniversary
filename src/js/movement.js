@@ -33,27 +33,27 @@ document.addEventListener('DOMContentLoaded', () => {
     if (localStorage.getItem('catfish_quest_complete')) {
         path_dict = {
             spawn: [null, "seaweed_castle", null, null],
-            seaweed_castle:["spawn", "fork", null, null],
-            fork: ["seaweed_castle", "jellyfish_fields", "wallace", "crevice"],
-            crevice: [null, null, "fork", "sunken_ship"],
+            seaweed_castle:["spawn", "threek", null, null],
+            threek: ["seaweed_castle", "jellyfish_fields", "wallace", "crevice"],
+            crevice: [null, null, "threek", "sunken_ship"],
             sunken_ship: [null, null, "crevice", null],
-            jellyfish_fields: ["fork", null, null, "hot_seat"],
+            jellyfish_fields: ["threek", null, null, "hot_seat"],
             hot_seat: [null, "crystal_crab_cave", "jellyfish_fields", null],
             crystal_crab_cave: ["hot_seat", null, null, null],
-            wallace: [null, null, "home", "fork"],
+            wallace: [null, null, "home", "threek"],
             home: [null, null, null, "wallace"]
         }
     } else {
         path_dict = {
             spawn: [null, "seaweed_castle", null, null],
-            seaweed_castle:["spawn", "fork", null, null],
-            fork: ["seaweed_castle", "jellyfish_fields", null, "crevice"],
-            crevice: [null, null, "fork", "sunken_ship"],
+            seaweed_castle:["spawn", "threek", null, null],
+            threek: ["seaweed_castle", "jellyfish_fields", null, "crevice"],
+            crevice: [null, null, "threek", "sunken_ship"],
             sunken_ship: [null, null, "crevice", null],
-            jellyfish_fields: ["fork", null, null, "hot_seat"],
+            jellyfish_fields: ["threek", null, null, "hot_seat"],
             hot_seat: [null, "crystal_crab_cave", "jellyfish_fields", null],
             crystal_crab_cave: ["hot_seat", null, null, null],
-            wallace: [null, null, "home", "fork"],
+            wallace: [null, null, "home", "threek"],
             home: [null, null, null, "wallace"]
         }
     }

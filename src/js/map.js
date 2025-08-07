@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const all_locations = [
-        "home", "wallace", "spawn", "seaweed_castle", "fork",
+        "home", "wallace", "spawn", "seaweed_castle", "threek",
         "jellyfish_fields", "crevice", "hot_seat",
         "crystal_crab_cave", "sunken_ship"
     ];

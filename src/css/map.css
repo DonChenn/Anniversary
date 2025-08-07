@@ -23,7 +23,7 @@
     grid-template-areas:
         ". . home . ."
         ". . wallace . ."
-        "spawn seaweed_castle fork jellyfish_fields ."
+        "spawn seaweed_castle threek jellyfish_fields ."
         ". . crevice hot_seat crystal_crab_cave"
         ". . sunken_ship . .";
 }
@@ -53,7 +53,7 @@
 #map-wallace { grid-area: wallace; }
 #map-spawn { grid-area: spawn; }
 #map-seaweed_castle { grid-area: seaweed_castle; }
-#map-fork { grid-area: fork; }
+#map-threek { grid-area: threek; }
 #map-jellyfish_fields { grid-area: jellyfish_fields; }
 #map-crevice { grid-area: crevice; }
 #map-sunken_ship { grid-area: sunken_ship; }
@@ -73,17 +73,17 @@
 
 #map-spawn.visited::after { content: '→'; right: -2em; top: 50%; transform: translateY(-50%); }
 #map-seaweed_castle.visited::after { content: '→'; right: -0.7em; top: 50%; transform: translateY(-50%); }
-#map-fork.visited[id="map-fork"]::after { content: '→'; right: -0.7em; top: 50%; transform: translateY(-50%); }
+#map-threek.visited[id="map-threek"]::after { content: '→'; right: -0.7em; top: 50%; transform: translateY(-50%); }
 #map-hot_seat.visited::after { content: '→'; right: -0.7em; top: 50%; transform: translateY(-50%); }
 
 #map-wallace.visited::before { content: '↑'; top: -0.6em; left: 50%; transform: translateX(-50%); }
-#map-fork.visited::before { content: '↑'; top: -0.6em; left: 50%; transform: translateX(-50%); }
+#map-threek.visited::before { content: '↑'; top: -0.6em; left: 50%; transform: translateX(-50%); }
 
 
 #map-crevice.visited::after { content: '↓'; bottom: -0.6em; left: 50%; transform: translateX(-50%); }
 #map-jellyfish_fields.visited::after { content: '↓'; bottom: -0.6em; left: 50%; transform: translateX(-50%); }
 
-#map-fork.visited > div::after, #map-fork.visited::after {
+#map-threek.visited > div::after, #map-threek.visited::after {
     content: '↓';
     position: absolute;
     color: white;

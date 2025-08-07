@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const chair_x = window.innerWidth / 2.1;
         const chair_y = window.innerHeight / 1.55;
 
-        const pengy_x = window.innerWidth / 4;
+        const pengy_x = window.innerWidth / 3.7;
         const pengy_y = window.innerHeight / 1.5;
 
         const interaction_radius = 100;
