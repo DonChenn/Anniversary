@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     background_music.play();
 
     const images = [
-        'assets/art/intro1.png', 'assets/art/intro2.png', 'assets/art/intro3.png',
-        'assets/art/intro4.png', 'assets/art/intro5.png', 'assets/art/intro6.png'
+        'assets/art/intro1.png', 'assets/art/intro2.png', 'assets/art/intro2.png',
+        'assets/art/intro3.png', 'assets/art/intro4.png', 'assets/art/intro5.png'
     ];
     const dialogues = [
         ["Click happy cat inside the box to advance dialogue"],
