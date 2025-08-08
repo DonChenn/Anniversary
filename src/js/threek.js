@@ -10,6 +10,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    document.body.addEventListener('click', () => {
+        const background_music = document.getElementById('background-music');
+        background_music.play();
+    })
+
     if (localStorage.getItem('fork_intro') !== 'true') {
         const dialogues = [
             "Glub Glub: i have no clue where this city is.",

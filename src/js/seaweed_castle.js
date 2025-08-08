@@ -6,6 +6,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const quest_pending = document.getElementById('quest_pending_icon');
     const background_music = document.getElementById('background-music');
     const dog = document.getElementById('dog');
+
+    document.body.addEventListener('click', () => {
+        const background_music = document.getElementById('background-music');
+        background_music.play();
+    })
+
     let current_dialogue = null;
 
     if (!localStorage.getItem('quest_complete')) {

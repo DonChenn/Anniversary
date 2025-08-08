@@ -1,4 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    document.body.addEventListener('click', () => {
+        const background_music = document.getElementById('background-music');
+        background_music.play();
+    })
+
     const creditsContainer = document.getElementById('credits-container');
     const creditsContent = document.querySelector('.credits-content');
     const finalDateContainer = document.getElementById('final-date-container');

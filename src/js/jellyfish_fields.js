@@ -5,6 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let current_dialogue = null;
     const dog = document.getElementById('dog');
 
+    document.body.addEventListener('click', () => {
+        const background_music = document.getElementById('background-music');
+        background_music.play();
+    })
+
     if (localStorage.getItem('dog_picked_up')) {
         dog.style.display = 'none';
     }

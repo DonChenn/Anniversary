@@ -3,6 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const dialogue_box = document.getElementById('dialogue-box');
     const dialogue_sound = document.getElementById('dialogue-sound');
 
+    document.body.addEventListener('click', () => {
+        const background_music = document.getElementById('background-music');
+        background_music.play();
+    })
+
     if (localStorage.getItem('wallace_intro') !== 'true') {
         const dialogues = [
             "Glub Glub: OH this was what was blocking the path above!",

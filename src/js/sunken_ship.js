@@ -12,6 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let current_dialogue = null;
     let note_current_state = 0;
 
+    document.body.addEventListener('click', () => {
+        const background_music = document.getElementById('background-music');
+        background_music.play();
+    })
+
     note_overlay.style.display = 'none';
     note_text_element.style.display = 'none';
 
