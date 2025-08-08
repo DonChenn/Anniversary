@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const dialogue_sound = document.getElementById('dialogue-sound');
     const quest_exclaim = document.getElementById('quest_icon');
     const quest_pending = document.getElementById('quest_pending_icon');
+    const background_music = document.getElementById('background-music');
     const dog = document.getElementById('dog');
     let current_dialogue = null;
 
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.body.addEventListener('click', () => {
+        background_music.play();
         if (current_dialogue) {
             current_dialogue.show_next_dialogue();
         }

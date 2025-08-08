@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const dialogue_text_element = document.getElementById('dialogue-text');
     const dialogue_box = document.getElementById('dialogue-box');
     const dialogue_sound = document.getElementById('dialogue-sound');
+    const background_music = document.getElementById('background-music');
 
     if (localStorage.getItem('spawn_intro') !== 'true') {
         const dialogues = [
@@ -22,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         document.body.addEventListener('click', () => {
+            background_music.play();
             dialogue_manager_instance.show_next_dialogue();
         });
     } else {
