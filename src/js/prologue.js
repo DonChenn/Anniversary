@@ -26,6 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function show_content(image_index) {
         if (image_index < images.length) {
+            if (image_index === 1) {
+                background_music.play();
+            }
             if (image_index === 4) {
                 background_music.pause();
             }
