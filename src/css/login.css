@@ -20,11 +20,11 @@ body {
     font-family: Omori, sans-serif;
     font-size: 30px;
     font-weight: bold;
-    display: flex; /* Make the body a flex container */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    height: 100vh; /* Make body take up full viewport height */
-    margin: 0; /* Remove default body margin */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
 #start-screen {

@@ -5,15 +5,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const quest_exclaim = document.getElementById('quest_icon');
     const quest_pending = document.getElementById('quest_pending_icon');
     const note_overlay = document.getElementById('note-overlay');
-    const note_open_image = document.getElementById('note-open'); // Get reference to the <img> element
-    const note_text_element = document.getElementById('note-text'); // Get reference to the <p> element for note text
-    const character_element = document.getElementById('character'); // Get the character element to get its position
+    const note_open_image = document.getElementById('note-open');
+    const note_text_element = document.getElementById('note-text');
+    const character_element = document.getElementById('character');
+    const background_music = document.getElementById('background-music');
+    background_music.play();
 
     let current_dialogue = null;
     let note_current_state = 0;
 
     document.body.addEventListener('click', () => {
-        const background_music = document.getElementById('background-music');
         background_music.play();
     })
 
