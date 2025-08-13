@@ -6,11 +6,5 @@ document.addEventListener('DOMContentLoaded', () => {
         if (saved_time) {
             water_background.currentTime = parseFloat(saved_time);
         }
-
-        if (localStorage.getItem('userInteracted') === 'true') {
-            water_background.play().catch(error => {
-                console.log("Autoplay was prevented: ", error);
-            });
-        }
     }
 });
