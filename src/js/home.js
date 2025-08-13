@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     const background_music = document.getElementById('background-music');
-    background_music.play();
 
     document.body.addEventListener('click', () => {
         background_music.play();

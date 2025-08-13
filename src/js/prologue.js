@@ -5,8 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const background_music = document.getElementById('background-music');
     const whirlpool_effect = document.getElementById('whirlpool-effect');
 
-    background_music.play();
-
     const images = [
         'assets/art/intro1.png', 'assets/art/intro2.png', 'assets/art/intro2.png',
         'assets/art/intro3.png', 'assets/art/intro4.png', 'assets/art/intro5.png'

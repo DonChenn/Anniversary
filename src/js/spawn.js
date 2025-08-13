@@ -4,8 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const dialogue_sound = document.getElementById('dialogue-sound');
     const background_music = document.getElementById('background-music');
 
-    background_music.play();
-
     if (localStorage.getItem('spawn_intro') !== 'true') {
         const dialogues = [
             "Glub Glub: aghh my head hurts.",

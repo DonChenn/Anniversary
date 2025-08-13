@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const note_text_element = document.getElementById('note-text');
     const character_element = document.getElementById('character');
     const background_music = document.getElementById('background-music');
-    background_music.play();
 
     let current_dialogue = null;
     let note_current_state = 0;

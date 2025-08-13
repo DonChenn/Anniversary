@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const dialogue_sound = document.getElementById('dialogue-sound');
     let current_dialogue = null;
     const background_music = document.getElementById('background-music');
-    background_music.play();
 
     document.body.addEventListener('click', () => {
         if (current_dialogue) {

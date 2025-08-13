@@ -83,6 +83,7 @@ function initialize_start_screen() {
         footer.classList.remove('hidden');
         footer.classList.add('fade-in');
 
+        localStorage.setItem('userInteracted', 'true');
         audio.play();
     });
 }

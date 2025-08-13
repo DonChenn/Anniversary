@@ -5,8 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let current_dialogue = null;
     const dog = document.getElementById('dog');
     const background_music = document.getElementById('background-music');
-    background_music.play();
-
 
     document.body.addEventListener('click', () => {
         background_music.play();
