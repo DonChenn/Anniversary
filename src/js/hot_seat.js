@@ -150,6 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "Finny: and you are going to be the next star",
             "Glub Glub: but im not ready for this type of pressure",
             "Finny: oh you'll be ready alright, ready for fame, ready for fortune, and ready for... THE HOT SEAT!",
+            "interact with the chair to start the game!",
             ""
         ];
 

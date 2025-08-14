@@ -31,12 +31,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             "Wallace: fast. you know, a dog once challenged me to a race. he was surprisingly quick. " +
             "all zig-zaggy. it was a blur of fur and determination. i, of course, being a whale, created a rather " +
-            "large wake and he ended up somewhere near Jellyfish Fields. i think i won, but he never came back with the trophy.",
+            "large wake and he ended up somewhere near Jellyfish Fields. i think i won, but he never came back." +
+            "you can have the trophy. here you go",
 
             "Glub Glub: right. a race. of course. this is useless. how am i supposed to get all the way up there?",
 
-            "Wallace: up where? to upperwhere? i wouldn’t recommend it this time of year. the currents are just " +
-            "dreadful for one’s complexion. makes my skin all… pruney.",
+            "Wallace: up where? to upperwear? i wouldn’t recommend it this time of year. the currents are just " +
+            "dreadful for one’s complexion. makes my skin all... pruney.",
             "Glub Glub: no, to the... wait a minute. that big hole on your back... you breathe out of that, right? " +
             "it goes all the way to the top.",
 
