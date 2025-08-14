@@ -31,8 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             "Wallace: fast. you know, a dog once challenged me to a race. he was surprisingly quick. " +
             "all zig-zaggy. it was a blur of fur and determination. i, of course, being a whale, created a rather " +
-            "large wake and he ended up somewhere near Jellyfish Fields. i think i won, but he never came back." +
-            "you can have the trophy. here you go",
+            "large wake and he ended up somewhere near Jellyfish Fields. i think i won, but he never came back. " +
+            "you can have the trophy tho",
 
             "Glub Glub: right. a race. of course. this is useless. how am i supposed to get all the way up there?",
 
