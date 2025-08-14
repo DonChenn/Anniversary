@@ -18,15 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const from = url_params.get('from');
 
 
-    const background_music = document.getElementById('background-music');
-    const saved_time = sessionStorage.getItem('music_time');
-
-    if (background_music) {
-        if (saved_time) {
-            background_music.currentTime = parseFloat(saved_time);
-        }
-    }
-
     if (page === "crystal_crab_cave") {
         norm_speed = 1;
         sprint_speed = 2;
@@ -107,7 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.addEventListener('keydown', (event) => {
         const key = event.key;
-        background_music.play();
         if (key === 'Shift') {
             keys_pressed.Shift = true;
         } else if (key.toLowerCase() in keys_pressed) {
